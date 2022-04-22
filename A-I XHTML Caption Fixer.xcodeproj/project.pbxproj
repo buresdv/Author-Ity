@@ -13,6 +13,7 @@
 		6317426728133716005EEFE6 /* Transfer Captions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317426628133716005EEFE6 /* Transfer Captions.swift */; };
 		6317426A281338BB005EEFE6 /* Write to Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63174269281338BB005EEFE6 /* Write to Console.swift */; };
 		6317426C281348B5005EEFE6 /* Find File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317426B281348B4005EEFE6 /* Find File.swift */; };
+		631742702813545C005EEFE6 /* Parse XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317426F2813545C005EEFE6 /* Parse XML.swift */; };
 		63AF77FA2813157600495BCE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF77F92813157600495BCE /* main.swift */; };
 		63AF78032813203800495BCE /* Check if Stuff Exists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF78022813203700495BCE /* Check if Stuff Exists.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		6317426628133716005EEFE6 /* Transfer Captions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transfer Captions.swift"; sourceTree = "<group>"; };
 		63174269281338BB005EEFE6 /* Write to Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Write to Console.swift"; sourceTree = "<group>"; };
 		6317426B281348B4005EEFE6 /* Find File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Find File.swift"; sourceTree = "<group>"; };
+		6317426F2813545C005EEFE6 /* Parse XML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parse XML.swift"; sourceTree = "<group>"; };
 		63AF77F62813157600495BCE /* A-I XHTML Caption Fixer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "A-I XHTML Caption Fixer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63AF77F92813157600495BCE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		63AF78022813203700495BCE /* Check if Stuff Exists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Check if Stuff Exists.swift"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				6317426628133716005EEFE6 /* Transfer Captions.swift */,
+				6317426F2813545C005EEFE6 /* Parse XML.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				6317426A281338BB005EEFE6 /* Write to Console.swift in Sources */,
 				63AF78032813203800495BCE /* Check if Stuff Exists.swift in Sources */,
 				63AF77FA2813157600495BCE /* main.swift in Sources */,
+				631742702813545C005EEFE6 /* Parse XML.swift in Sources */,
 				6317426C281348B5005EEFE6 /* Find File.swift in Sources */,
 				6317426528133540005EEFE6 /* Write File.swift in Sources */,
 				6317426728133716005EEFE6 /* Transfer Captions.swift in Sources */,
