@@ -34,7 +34,7 @@ fixImageCaptions [cesta ke složce XHTML] [cesta ke složce XML]
         let loadedXMLFile: String = findFilesInFolder(inFolder: xmlFolder, desiredExtension: ".xml").first ?? "Soubor to našlo, ale nepovedlo se ho převést na cestu. wtf jak se to stalo" // Get the name of the XML file from the array
         let loadedXMLFilePath: String = "\(xmlFolder)/\(loadedXMLFile)"
         
-        let XMLContents: String = try! String(contentsOfFile: loadedXMLFilePath, encoding: .utf8)
+        let XMLContents: String = loadContentsOfFileIntoString(atPath: loadedXMLFilePath)
         
         print(XMLContents)
     }

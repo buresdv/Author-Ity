@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+func loadContentsOfFileIntoString(atPath path: String) -> String {
+    return try! String(contentsOfFile: path, encoding: .utf8)
+}
