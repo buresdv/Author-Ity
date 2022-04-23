@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+func replaceCaptions(id: Int, newCaption caption: String) -> Void {
+    
+}
