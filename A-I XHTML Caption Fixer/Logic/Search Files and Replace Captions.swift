@@ -19,13 +19,15 @@ func searchFilesForImageIDsAndReplaceCaptions(forID id: Int, atPath path: String
             writeToConsole(message: "\(file) contains \(id)", format: .success)
             
             /// Set up regex to extract the part that contains the caption
-            #warning("This replaces everything in the file with the first match. Change it so it only replaces the first one")
+            #warning("I have no ide why TF this is broken. It should match only the first occurence, but it replaces everything in the file for some reason")
             let regexExtractRelevantCaptionTextPlacement = "(?<=\(id)\\.[A-Za-z]{3}\\\" ).(?:(?! height).)*"
             
             /// Match
             guard let matchedRange = contentsOfCurrentFile.range(of: regexExtractRelevantCaptionTextPlacement, options: .regularExpression) else { return }
             
-            let matchedString: String = contentsOfCurrentFile.substring(with: matchedRange)
+            /// Convert matched raw bite ranges into Strings
+            //let matchedString: String = contentsOfCurrentFile.substring(with: matchedRange)
+            let matchedString: String = String(contentsOfCurrentFile[matchedRange])
             
             /// Replace the "Help Image" with the respective caption
             let matchedStringWithReplacedCaption: String = matchedString.replacingOccurrences(of: "Help Image", with: caption)
