@@ -36,19 +36,23 @@ fixImageCaptions [cesta ke složce XHTML] [cesta ke složce XML]
         
         let XMLContents: String = loadContentsOfFileIntoString(atPath: loadedXMLFilePath)
         
-        parseXML(rawXML: XMLContents)
-    }
-
-    // MARK: XHTML
-    if !existsAtPath(atPath: xhtmlFolder) {
-        writeToConsole(message: "Neplatná cesta ke složce XHTML", format: .error)
-        exit(0)
+        let extractedIDsAndCaptions = parseXML(rawXML: XMLContents)
         
-    } else {
-        
-        // MARK: Load XHTML
-        let loadedXHTMLFiles: [String] = findFilesInFolder(inFolder: xhtmlFolder, desiredExtension: ".htm")
-        
-        print(loadedXHTMLFiles)
+        // MARK: XHTML
+        if !existsAtPath(atPath: xhtmlFolder) {
+            writeToConsole(message: "Neplatná cesta ke složce XHTML", format: .error)
+            exit(0)
+            
+        } else {
+            
+            // MARK: Load XHTML
+            let loadedXHTMLFiles: [String] = findFilesInFolder(inFolder: xhtmlFolder, desiredExtension: ".htm")
+            
+            print(loadedXHTMLFiles)
+            
+            for dictionaryItem in extractedIDsAndCaptions {
+                searchFilesForImageIDs(forID: dictionaryItem.key, atPath: xhtmlFolder, inFiles: loadedXHTMLFiles)
+            }
+        }
     }
 }
