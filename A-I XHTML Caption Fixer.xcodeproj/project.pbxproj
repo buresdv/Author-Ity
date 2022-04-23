@@ -71,7 +71,6 @@
 			children = (
 				63AF78022813203700495BCE /* Check if Stuff Exists.swift */,
 				6317426228133536005EEFE6 /* Read File.swift */,
-				6317426B281348B4005EEFE6 /* Find File.swift */,
 			);
 			path = Read;
 			sourceTree = "<group>";
@@ -127,6 +126,7 @@
 				6317426628133716005EEFE6 /* Transfer Captions.swift */,
 				6317426F2813545C005EEFE6 /* Parse XML.swift */,
 				638AA13528144EB30022E521 /* Search Files.swift */,
+				6317426B281348B4005EEFE6 /* Find File.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
