@@ -14,6 +14,7 @@
 		6317426A281338BB005EEFE6 /* Write to Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63174269281338BB005EEFE6 /* Write to Console.swift */; };
 		6317426C281348B5005EEFE6 /* Find File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317426B281348B4005EEFE6 /* Find File.swift */; };
 		631742702813545C005EEFE6 /* Parse XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317426F2813545C005EEFE6 /* Parse XML.swift */; };
+		631742732814301D005EEFE6 /* SwiftyXMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 631742722814301D005EEFE6 /* SwiftyXMLParser */; };
 		63AF77FA2813157600495BCE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF77F92813157600495BCE /* main.swift */; };
 		63AF78032813203800495BCE /* Check if Stuff Exists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AF78022813203700495BCE /* Check if Stuff Exists.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631742732814301D005EEFE6 /* SwiftyXMLParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +144,9 @@
 			dependencies = (
 			);
 			name = "A-I XHTML Caption Fixer";
+			packageProductDependencies = (
+				631742722814301D005EEFE6 /* SwiftyXMLParser */,
+			);
 			productName = "A-I XHTML Caption Fixer";
 			productReference = 63AF77F62813157600495BCE /* A-I XHTML Caption Fixer */;
 			productType = "com.apple.product-type.tool";
@@ -170,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 63AF77ED2813157600495BCE;
+			packageReferences = (
+				631742712814301D005EEFE6 /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
+			);
 			productRefGroup = 63AF77F72813157600495BCE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -352,6 +360,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		631742712814301D005EEFE6 /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yahoojapan/SwiftyXMLParser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		631742722814301D005EEFE6 /* SwiftyXMLParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 631742712814301D005EEFE6 /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */;
+			productName = SwiftyXMLParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63AF77EE2813157600495BCE /* Project object */;
 }
