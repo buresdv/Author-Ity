@@ -36,14 +36,16 @@ fixImageCaptions [cesta ke složce XHTML] [cesta ke složce XML]
         
         let XMLContents: String = loadContentsOfFileIntoString(atPath: loadedXMLFilePath)
         
-        print(XMLContents)
+        parseXML(rawXML: XMLContents)
     }
 
     // MARK: XHTML
     if !existsAtPath(atPath: xhtmlFolder) {
         writeToConsole(message: "Neplatná cesta ke složce XHTML", format: .error)
         exit(0)
+        
     } else {
+        
         // MARK: Load XHTML
         let loadedXHTMLFiles: [String] = findFilesInFolder(inFolder: xhtmlFolder, desiredExtension: ".htm")
         
