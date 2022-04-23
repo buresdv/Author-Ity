@@ -51,6 +51,6 @@ fixImageCaptions [cesta ke složce XHTML] [cesta ke složce XML]
     print(loadedXHTMLFiles)
     
     for dictionaryItem in extractedIDsAndCaptions {
-        searchFilesForImageIDs(forID: dictionaryItem.key, atPath: xhtmlFolder, inFiles: loadedXHTMLFiles)
+        searchFilesForImageIDsAndReplaceCaptions(forID: dictionaryItem.key, atPath: xhtmlFolder, inFiles: loadedXHTMLFiles, caption: dictionaryItem.value)
     }
 }
