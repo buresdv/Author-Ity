@@ -8,19 +8,24 @@
 import Foundation
 import SwiftyXMLParser
 
-func parseXML(rawXML: String) -> Any {
+func parseXML(rawXML: String) -> [Int: String] {
     let parsedXML = try! XML.parse(rawXML)
     
     let pathToCaption = ["AuthorIT", "Objects", "File"]
     
+    var finalDictionary = [Int: String]()
+    
     if case .failure(let error) = parsedXML[pathToCaption] {
-        print(error)
+        fatalError("Posral se parser: \(error)")
+    } else {
+        for hit in parsedXML[pathToCaption] {
+            let imageID: Int! = Int(hit["Object", "VersionRoot"].text!)
+            let captionText: String? = hit["PrintCaptionTitle"].text
+            
+            if captionText != nil {
+                finalDictionary[imageID] = captionText
+            }
+        }
     }
-    
-    for hit in parsedXML[pathToCaption] {
-        print(hit["PrintCaptionTitle"].text)
-    }
-
-    
-    return parsedXML
+    return finalDictionary
 }
