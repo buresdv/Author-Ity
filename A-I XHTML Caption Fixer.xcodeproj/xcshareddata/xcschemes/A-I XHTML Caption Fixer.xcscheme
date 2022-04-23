@@ -52,11 +52,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "&quot;/Users/david/Library/CloudStorage/OneDrive-USUSoftwareAG/Custom Software/A-I XHTML Caption Fixer/Demo Data/USU Chatbot 2.6_XHTML&quot;"
+            argument = "&quot;/Users/david/Library/CloudStorage/OneDrive-USUSoftwareAG/Custom Software/A-I XHTML Caption Fixer/Demo Data/Chatbot/USU Chatbot 2.6_XHTML&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "&quot;/Users/david/Library/CloudStorage/OneDrive-USUSoftwareAG/Custom Software/A-I XHTML Caption Fixer/Demo Data/USU Chatbot 2.6_XML&quot;"
+            argument = "&quot;/Users/david/Library/CloudStorage/OneDrive-USUSoftwareAG/Custom Software/A-I XHTML Caption Fixer/Demo Data/Chatbot/USU Chatbot 2.6_XML&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

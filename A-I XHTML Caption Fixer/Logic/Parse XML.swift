@@ -27,5 +27,6 @@ func parseXML(rawXML: String) -> [Int: String] {
             }
         }
     }
+    print(finalDictionary)
     return finalDictionary
 }
