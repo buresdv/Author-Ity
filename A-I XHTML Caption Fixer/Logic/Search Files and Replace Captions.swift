@@ -7,7 +7,7 @@
 
 import Foundation
 
-func searchFilesForImageIDsAndReplaceCaptions(forID id: Int, atPath path: String, inFiles files: [String], caption caption: String) -> Void {
+func searchFilesForImageIDsAndReplaceCaptions(forID id: Int, atPath path: String, inFiles files: [String], caption: String) -> Void {
     /// Go through all the files
     for file in files {
         let absolutePathToFile: String = "\(path)/\(file)"
@@ -16,10 +16,10 @@ func searchFilesForImageIDsAndReplaceCaptions(forID id: Int, atPath path: String
         
         /// If the current file contains any of the possible images, proceed
         if contentsOfCurrentFile.contains(String(id)) {
-            writeToConsole(message: "\(file) contains \(id)", format: .success)
+            writeToConsole(message: "\(file) obsahuje \(id)", format: .success)
             
             /// Set up regex to extract the part that contains the caption
-            #warning("I have no ide why TF this is broken. It should match only the first occurence, but it replaces everything in the file for some reason")
+            /// It also has to include the ID of the image object, or it will replace the labels for all images in the file
             let regexExtractRelevantCaptionTextPlacement = "\(id)\\.[A-Za-z]{3}\\\".(?:(?! height).)*"
             
             /// Match
