@@ -20,7 +20,7 @@ func searchFilesForImageIDsAndReplaceCaptions(forID id: Int, atPath path: String
             
             /// Set up regex to extract the part that contains the caption
             #warning("I have no ide why TF this is broken. It should match only the first occurence, but it replaces everything in the file for some reason")
-            let regexExtractRelevantCaptionTextPlacement = "(?<=\(id)\\.[A-Za-z]{3}\\\" ).(?:(?! height).)*"
+            let regexExtractRelevantCaptionTextPlacement = "\(id)\\.[A-Za-z]{3}\\\".(?:(?! height).)*"
             
             /// Match
             guard let matchedRange = contentsOfCurrentFile.range(of: regexExtractRelevantCaptionTextPlacement, options: .regularExpression) else { return }
