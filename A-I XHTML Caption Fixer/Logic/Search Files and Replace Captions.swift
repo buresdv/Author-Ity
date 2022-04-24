@@ -19,20 +19,27 @@ func searchFilesForImageIDsAndReplaceCaptions(forID id: Int, atPath path: String
             writeToConsole(message: "\(file) contains \(id)", format: .success)
             
             /// Set up regex to extract the part that contains the caption
-            let regexExtractRelevantCaptionTextPlacement = "(?<=\(id)\\.[A-Za-z]{3}\\\" ).(?:(?! height).)*"
+            #warning("I have no ide why TF this is broken. It should match only the first occurence, but it replaces everything in the file for some reason")
+            let regexExtractRelevantCaptionTextPlacement = "\(id)\\.[A-Za-z]{3}\\\".(?:(?! height).)*"
             
             /// Match
             guard let matchedRange = contentsOfCurrentFile.range(of: regexExtractRelevantCaptionTextPlacement, options: .regularExpression) else { return }
             
-            let matchedString: String = contentsOfCurrentFile.substring(with: matchedRange)
+            /// Convert matched raw bite ranges into Strings
+            //let matchedString: String = contentsOfCurrentFile.substring(with: matchedRange)
+            let matchedString: String = String(contentsOfCurrentFile[matchedRange])
             
             /// Replace the "Help Image" with the respective caption
-            let replacedCaption: String = matchedString.replacingOccurrences(of: "Help Image", with: caption)
+            let matchedStringWithReplacedCaption: String = matchedString.replacingOccurrences(of: "Help Image", with: caption)
             print("""
 \(matchedString) ↴
-\(replacedCaption)
+\(matchedStringWithReplacedCaption)
 
 """)
+            
+            let finalFileContentsReadyToWrite: String = contentsOfCurrentFile.replacingOccurrences(of: matchedString, with: matchedStringWithReplacedCaption)
+            
+            writeToFile(newContents: finalFileContentsReadyToWrite, atPath: absolutePathToFile)
             
         } else {
             /// Write this if the current file doesn't contain the image
