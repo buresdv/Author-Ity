@@ -7,15 +7,21 @@
 
 import Foundation
 
-
 var arguments: [String] = CommandLine.arguments // Get arguments
 arguments.remove(at: 0) // Remove first argument, because that's literally just the path to the program itself
 
-if arguments.isEmpty || arguments[0] == "help" { // Check if the user needs help
-    writeToConsole(message: """
+let helpMessage: String = """
 Jak na to:
 fixImageCaptions [cesta ke složce XHTML] [cesta ke složce XML]
-""", format: .helper)
+"""
+
+if arguments.isEmpty || arguments[0] == "help" { // Check if the user needs help
+    writeToConsole(message: helpMessage, format: .helper)
+    exit(0)
+    
+} else if arguments.count != 2 { // Check if they put enough arguments in
+    writeToConsole(message: "Neplatný počet argumentů", format: .error)
+    writeToConsole(message: helpMessage, format: .helper)
     exit(0)
     
 } else { // If they don't need help, proceed
@@ -48,7 +54,7 @@ fixImageCaptions [cesta ke složce XHTML] [cesta ke složce XML]
     // MARK: Load XHTML
     let loadedXHTMLFiles: [String] = findFilesInFolder(inFolder: xhtmlFolder, desiredExtension: ".htm")
     
-    print(loadedXHTMLFiles)
+    // print(loadedXHTMLFiles)
     
     for dictionaryItem in extractedIDsAndCaptions {
         searchFilesForImageIDsAndReplaceCaptions(forID: dictionaryItem.key, atPath: xhtmlFolder, inFiles: loadedXHTMLFiles, caption: dictionaryItem.value)
