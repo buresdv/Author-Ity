@@ -1,4 +1,4 @@
-# AuthorIt-Image-Captions-to-XHTML
+# AuthorIt Image Captions to XHTML
 A simple terminal app to transfer image captions from XML to XHTML Author-It exports.
 
 # Usage
