@@ -3,3 +3,6 @@ A simple terminal app to transfer image captions from XML to XHTML Author-It exp
 
 # Usage
 `./fixImageCaptions [path to the XHTML export folder] [path to the XML export folder]`
+
+# System Requirements
+macOS 12 Monterey or newer
